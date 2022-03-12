@@ -1,6 +1,6 @@
 <h1>Wordle CLone in JavaScript!<h1>
 <div align="center">
-  <img src="./README/screenshot.phg" width="50%">
+  <img src="./README/screenshot.png" width="50%">
 </div>
 
 <h3>What is Wordle?</h3>
