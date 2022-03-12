@@ -1,8 +1,21 @@
+// const { response } = require("express")
 const tileDisplay = document.querySelector('.tile-container')
 const keyboard = document.querySelector('.key-container')
 const massageDisplay = document.querySelector('.massage-container')
 
-const wordle = 'SUPER'
+let wordle
+
+const getWordle = () => {
+    fetch('http://localhost:8000/word')
+    .then(response => response.json())
+    .then(json => {
+        console.log(json);
+        wordle = json.toUpperCase();
+    })
+    .catch(err => console.log(err))
+}
+getWordle();
+
 const keys = [
     'Q',
     'W',
@@ -170,12 +183,10 @@ const flipTile = () => {
     })
     
     rowTiles.forEach((tile, index) => {
-        
         setTimeout(() => {
             tile.classList.add('flip')
             tile.classList.add(guess[index].color)
             addColorToKey(guess[index].letter, guess[index].color)
         }, 500 * index)
-        
     })
 }
