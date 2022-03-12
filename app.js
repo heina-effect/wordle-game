@@ -1,4 +1,3 @@
-// const { response } = require("express")
 const tileDisplay = document.querySelector('.tile-container')
 const keyboard = document.querySelector('.key-container')
 const massageDisplay = document.querySelector('.massage-container')
@@ -7,6 +6,12 @@ let wordle
 
 const getWordle = () => {
     fetch('http://localhost:8000/word')
+    .then(response => {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+    })
     .then(response => response.json())
     .then(json => {
         console.log(json);
@@ -121,11 +126,18 @@ const deleteLetter = () => {
 }
 
 const checkRow = () => {
+    
     const guess = guessRows[currentRow].join('');
+    console.log('guess', guess)
 
     if (currentTile > 4) {
-        flipTile();
+        // fetch(`http://localhost:8000/check/?word=${guess}`)
+        // .then(response => response.json())
+        // .then(json => {
+        //     console.log(json)
+        // })
         console.log('guess is ' + guess, 'wordle is ' + wordle);
+        flipTile();
         if (wordle == guess) {
             showMessage('Magnificent!');
             isGameOver = true;
