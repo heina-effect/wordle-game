@@ -1,4 +1,4 @@
-<h1>Wordle CLone in JavaScript!<h1>
+<h1>Wordle Clone in JavaScript!<h1>
 <div align="center">
   <img src="./README/screenshot.png" width="50%">
 </div>
