@@ -15,3 +15,24 @@
 1. Dictionary API 이용하여 사전에 단어 입력시 경고메세지 나타내기 (유료API라 보류) <br>
 2. 부드러운 애니메이션 효과 주기<br>
 3. react, typescript 업그레이드<br>
+
+## Getting Started
+To start this project please go to RapidAPI to sign up for the [APIs](https://bit.ly/rapidapi-hub).
+ 
+### `.env`
+<p>
+  Now create a `.env` file in the root of your project with the following:
+
+```
+RAPID_API_KEY={your_rapid_api_key}
+```
+</p>
+
+### `npm i`
+This will install all the necessary dependencies.
+
+### `npm run start:backend`
+This will start the backend on  [http://localhost:8000](http://localhost:8000).
+
+### `referenced project`
+[This will start the backend on  [http://localhost:8000](http://localhost:8000)](https://github.com/kubowania/wordle-javascript).
